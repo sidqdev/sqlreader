@@ -15,9 +15,9 @@ q = sql.read('sql_queries/query_name')
 
 ------------
 
-
+## Clear cache
 ```python
-sql.clear_cache() #clear cache
+sql.clear_cache()
 ```
 
 ------------
