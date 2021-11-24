@@ -47,15 +47,15 @@ class SQLReader:
 
     def read(self, query_name: str, file_extension: str = 'sql') -> str:
         file_name = query_name + '.' + file_extension
-        if file_name in CACHED_QUERIES:
-            return CACHED_QUERIES[file_name]
+        if file_name in self.cached_queries:
+            return self.cached_queries[file_name]
 
         file = open(self.base_dir + file_name, 'r')
         query = file.read()
         file.close()
 
         if not self.auto_clear:
-            CACHED_QUERIES[file_name] = query
+            self.cached_queries[file_name] = query
 
         return query
 
