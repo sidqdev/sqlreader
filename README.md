@@ -1,27 +1,32 @@
-<h1>Simple sql reader</h1>
-<br>
-<h3>To read file</h3>
-<code>
-import sqlreader as sql<br>
+# Simple sql reader
+
+##  To read file
+```python
+import sqlreader as sql
+sql.set_base_dir('sql_queries/') # default '/'
+q = sql.read('query_name')
+```
+
+##### OR 
+```python
+q = sql.read('sql_queries/query_name')
+
+```
+
+------------
 
 
-sql.set_base_dir('sql_queries/') # default '/'<br>
-q = sql.read('query_name')<br>
+```python
+sql.clear_cache() #clear cache
+```
 
-OR <br>
-
-q = sql.read('sql_queries/query_name')<br>
+------------
 
 
-TO CLEAR CACHE:<br>
-    sql.clear_cache()
-</code>
+## To creat class SQLReader
 
-<hr>
-<br>
-<h3>To creat class SQLReader</h1>
-<code>
-import sqlreader<br>
-sql = sqlreader.SQLReader() # params 'directory_name' and 'auto_clear'<br>
-q = sql.read('query_name')<br>
-</code>
+```python
+import sqlreader
+sql = sqlreader.SQLReader() # params 'directory_name' and 'auto_clear'
+q = sql.read('query_name')
+```
